@@ -1,17 +1,31 @@
-# Portfolio - Website
+# Portfolio V2
 
-_Next.js, Tailwind, HeadlessUI, Prisma, MySQL_
+_Stack: Next.js con TypeScript, Tailwind CSS, Shadcn UI, Next-Auth, React-Hook-Form, Zod, Bcrypt, Framer Motion, Prisma, MySQL._
 
----
+Portfolio personal serverless realizado para mostrar proyectos destacados. Utilización de Server Side Rendering (SSR) con ciertos componentes CSR que necesitan de mayor interactividad. Server Actions para la página de Admin. Incluye dark mode automático con toggle para sobreescribir el tema.
 
-Página web personal para mostrar proyectos destacados, soporta dark mode automático con la opción de sobreescribir con tema manual. Construido con SSR (Server Side Rendering), animaciones basadas en navegación y panel de detalles accesible en cada projecto. El panel de detalles del proyecto es obtenido con un fetch a un MDX remoto, permitiendo tener la documentación separada al repositorio de la página, con el fin de actualizar el contenido sin modificar la página corriendo en el servidor.
+## Página principal
 
-La vista previa de los proyectos es obtenida desde una base de datos MySQL remota; la cual entrega el link a la imágen, nombre de proyecto, breve descripción y el link al MDX remoto.
+La página principal muestra un listado de 4 proyectos destacados con un bottón para ver el resto en una nueva ruta "/projects". También muestra el historial de mi carrera profesional como programador de software.
 
-![screenshot](https://github.com/Jaycedam/portfolio-mdx/raw/main/projects/portfolio-v2/2.webp)
-![screenshot](https://github.com/Jaycedam/portfolio-mdx/raw/main/projects/portfolio-v2/3.webp)
+![screenshot](https://github.com/Jaycedam/portfolio-mdx/raw/main/projects/portfolio-v2/projects.webp)
 
----
+Todos estos datos son obtenidos desde una base de datos remota MySQL. El listado de proyectos posee el nombre, URL de la imágen del listado, URL a un archivo MDX remoto que obtiene los detalles (como este archivo actual), área del proyecto y un boolean que determina si el proyecto es mostrado en la página principal.
+
+## Página de Administrador
+
+La página de administrador está protegida con next-auth y utiliza credenciales almacenadas en una base de datos MySQL. Las contraseñas se almacenan de manera segura mediante el uso de Bcrypt al registrar.
+
+### Características
+
+- Sidebar: Esta página incluye una barra lateral con enlaces referentes a cada tabla de la base de datos, además de la página principal de admin.
+- Tablas: Al hacer clic en un enlace de la barra lateral, se muestra una tabla con la lista de elementos en la base de datos. Cada columna tiene botones para eliminar o actualizar la entrada correspondiente, también existe un bottón para crear una nueva entrada, la cual se encuentra al lado del título.
+
+![screenshot](https://github.com/Jaycedam/portfolio-mdx/raw/main/projects/portfolio-v2/admin.webp)
+
+## Modelo
+
+![screenshot](https://github.com/Jaycedam/portfolio-mdx/raw/main/projects/portfolio-v2/model.webp)
 
 ## Links
 
