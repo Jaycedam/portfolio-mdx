@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-mdx",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "next-mdx-remote": "^4.4.1"
+  }
+}
