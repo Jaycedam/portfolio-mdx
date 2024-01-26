@@ -12,12 +12,36 @@ Scripts para automatizar set-up de macOS. El script realiza las siguientes accio
    - Configuración y extensiones instaladas de VSCodium (settings.json).
    - Paquetes instalados por Homebrew mediante un Brewfile.
 3. Modifica algunas preferencias predeterminadas de macOS:
-   - Dock: Posición a la izquierda, ocultación automática, recientes desactivados.
+   - Dock: desactiva ocultar automaticamente, recientes desactivados.
    - Finder: Mostrar extensiones de archivo, mostrar archivos ocultos, mostrar barra de ruta, vista de lista por defecto, mantener carpetas en la parte superior, alcance de búsqueda a la carpeta actual.
    - Espacios: Desactivar reorganización automática de Espacios, agrupar por aplicación en Mission Control.
    - Seguridad: Habilita el firewall.
+4. Cambia default shell a [Fish](https://fishshell.com).
 
 También posee un script para realizar un backup, el cual actualiza los archivos mencionados en el punto 2.
+
+## Cómo usar
+
+Para restaurar configuración y backup existente en el repositorio
+
+```bash
+git clone https://github.com/Jaycedam/mac-setup.git && cd mac-setup && bash main.sh
+```
+
+Para actualizar backup
+
+```bash
+cd path-to-project
+bash backup.sh
+```
+
+Después del backup, realizar commit y push
+
+```bash
+git add .
+git commit -m "chore: backup updated"
+git push origin main
+```
 
 ---
 
