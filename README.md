@@ -10,11 +10,17 @@ Repo that serves the project details to my [portfolio website](https://github.co
 <HeaderImage src="" alt="" />
 ```
 
-- External link with button styling
+- External links with button styling
 
 ```TSX
-<LinkButton title="" href="" />
+<div className="flex gap-4 flex-wrap">
+ <LinkButton title="" href="" />
+</div>
 ```
+
+## Regular HTML components
+
+For regular components, tailwind classes can be used by adding `className=""`
 
 ## Testing
 
