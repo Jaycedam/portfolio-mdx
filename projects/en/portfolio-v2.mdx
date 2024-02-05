@@ -1,18 +1,36 @@
 ---
 title: "Portfolio V2"
 area: "Website"
-description: "Lorem ipsum."
+description: "Personal portfolio created with Next.js App router, using SSR for most of the site and CSR on the elements that need interactivity, Server Actions, intercepting routes with parallel routes for the modals. It also has multilanguage support (EN/ES), fetching different data."
 date: "2023-04"
 featured: "true"
 tags: ["React", "Next.js", "Typescript", "Prisma", "MySQL"]
 image: "https://github.com/Jaycedam/portfolio-mdx/raw/testing/projects/images/portfolio-v2/preview.webp"
 ---
 
-## Página principal
+## Main Features
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum in arcu vitae rutrum. Sed in dui velit. Fusce dapibus velit a nisl vestibulum, id aliquam libero rhoncus. Nam volutpat odio et ante condimentum tristique. In mollis, purus vitae vulputate ullamcorper, ante risus egestas quam, id aliquam turpis mauris a nisl. Ut facilisis, ante nec malesuada faucibus, mi neque finibus sapien, et tristique elit nibh vitae metus. Praesent est risus, aliquam sed mollis in, pulvinar id libero.
+### MDX
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla id ante eu augue eleifend varius. Vestibulum fermentum vulputate placerat. Suspendisse imperdiet magna id turpis efficitur tincidunt. Nulla facilisi. Nullam odio dui, eleifend eu pulvinar vel, semper non justo. Praesent ullamcorper mollis diam ut finibus. Sed quis ex eget nunc dignissim fermentum. Maecenas sollicitudin velit eget blandit lacinia. Integer in placerat nibh.
+The list of projects and blog posts is obtained from a remote repository through the GitHub API.
+
+### Modals
+
+Clicking on a project or blog post opens a modal using [Intercepting Routes](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes) with [Parallel Routes](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes) to display the content over the current page.
+
+### Localization
+
+The page supports English and Spanish, changing all content and data obtained from external sources, such as the database and MDX files.
+
+Therefore, there are two versions of each remote MDX, and columns based on the current language in the database.
+
+### Admin
+
+The Administrator route, along with all subroutes, is protected with credentials, saved in the database. The password has been encrypted using bcrypt.
+
+The datatable allows filtering and sorting, with edit and delete buttons for the column, and a create button at the top. All actions use Server Actions.
+
+The forms use react-hook-form and Zod for validation on both the frontend and backend.
 
 ## Links
 
