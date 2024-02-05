@@ -1,42 +1,36 @@
 ---
 title: "Portfolio V2"
 area: "Website"
-description: "Portfolio personal serverless realizado para mostrar proyectos destacados. Utilización de Server Side Rendering (SSR) con ciertos componentes CSR que necesitan de mayor interactividad. Server Actions para la mutación de datos. Incluye dark mode automático con toggle para sobreescribir el tema."
+description: "Página personal portfolio creada con Next.js App Router, usando SSR para la mayor parte del sitio, con ciertos componentes CSR que necesitan de mayor interactividad, Server Actions, Intercepting Routes con Parallel Routes para mostrar los Modals. También posee soporte multilenguaje (ES/EN), obteniendo datos distintos."
 date: "2023-04"
 featured: "true"
 tags: ["React", "Next.js", "Typescript", "Prisma", "MySQL"]
 image: "https://github.com/Jaycedam/portfolio-mdx/raw/testing/projects/images/portfolio-v2/preview.webp"
 ---
 
-## Página principal
+## Características Principales
 
-La página principal muestra un listado de 4 proyectos destacados con un bottón para ver el resto en una nueva ruta "/projects". También muestra el historial de mi carrera profesional como programador de software.
+### MDX
 
-Todos estos datos son obtenidos desde una base de datos remota MySQL. El listado de proyectos posee el nombre, URL de la imágen del listado, URL a un archivo MDX remoto que obtiene los detalles (como este archivo actual), área del proyecto y un boolean que determina si el proyecto es mostrado en la página principal.
+El listado de proyectos y blog posts, es obtenido de un repositorio remoto a través de GitHub API.
 
-Al presionar en un proyecto, se abre un modal utilizando [Intercepting Routes](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes) con [Parallel Routes](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes) para mostrar el contenido sobre la página actual.
+### Modals
 
-Al final de la página principal existe un formulario de contacto que utiliza react-hook-form con zod para validación. Al validar, se activa un server action que ejecuta el envío de email a través de la API de [Resend](https://resend.com) hacía mi correo personal. Luego se notifica al usuario si la acción fue exisosa.
+Al presionar en un proyecto o blog post, se abre un modal utilizando [Intercepting Routes](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes) con [Parallel Routes](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes) para mostrar el contenido sobre la página actual.
 
-## Página de Administrador
+### Localización
 
-La página de administrador está protegida con next-auth y utiliza credenciales almacenadas en una base de datos MySQL. Las contraseñas se almacenan de manera segura mediante el uso de Bcrypt al registrar.
+La página posee soporte para Inglés y Español, cambiando todo el contenido y los datos obtenidos de fuentes externas, como la base de datos y archivos MDX.
 
-### Características
+Por esto, existen dos versiones de cada MDX remoto, y columnas basadas en el lenguaje actual en la bd.
 
-- Sidebar: Esta página incluye una barra lateral con enlaces referentes a cada tabla de la base de datos, además de la página principal de admin.
-- Tablas: Al hacer clic en un enlace de la barra lateral, se muestra una tabla con la lista de elementos en la base de datos. Cada columna tiene botones para eliminar o actualizar la entrada correspondiente, también existe un bottón para crear una nueva entrada, la cual se encuentra al lado del título.
-- Validación con react-hook-form y Zod, notificación de acciones CRUD.
+### Admin
 
-## Video
+Ruta especial de Administrador junto a todas las subrutas están protegida con credenciales, guardadas en la base de datos. La contraseña ha sido cifrada utilizando bcrypt.
 
-<video className="w-full aspect-video" controls muted loop>
-  <source
-    src="https://cdn.dribbble.com/userupload/12488295/file/original-321951c26af04e81899caab13ab3c8c6.mp4"
-    type="video/mp4"
-  />
-  Your browser does not support the video tag.
-</video>
+La tabla permite filtrar y ordenar, con botones de editar y eliminar la columna, con un botón de crear al inicio. Todas las acciones usan Server Actions.
+
+Los forms utilizan react-hook-form y Zod para la validación en frontend y backend.
 
 ## Links
 
