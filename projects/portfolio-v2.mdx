@@ -18,12 +18,6 @@ El listado de proyectos y blog posts, es obtenido de un repositorio remoto a tra
 
 Al presionar en un proyecto o blog post, se abre un modal utilizando [Intercepting Routes](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes) con [Parallel Routes](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes) para mostrar el contenido sobre la página actual.
 
-### Localización
-
-La página posee soporte para Inglés y Español, cambiando todo el contenido y los datos obtenidos de fuentes externas, como la base de datos y archivos MDX.
-
-Por esto, existen dos versiones de cada MDX remoto, y columnas basadas en el lenguaje actual en la bd.
-
 ### Admin
 
 Ruta especial de Administrador junto a todas las subrutas están protegida con credenciales, guardadas en la base de datos. La contraseña ha sido cifrada utilizando bcrypt.
